@@ -1,132 +1,132 @@
 # 🛍️ Ambastyle Fashion Store
 
-Website bán quần áo nam trực tuyến được xây dựng bằng PHP thuần và MySQL.
+An online men's clothing store built with pure PHP and MySQL.
 
-## 📋 Mô tả dự án
+## 📋 Project Description
 
-Ambastyle là một hệ thống thương mại điện tử hoàn chỉnh cho cửa hàng thời trang nam với các tính năng:
+Ambastyle is a complete e-commerce system for a men's fashion store with the following features:
 
-- **Trang người dùng**: Xem sản phẩm, tìm kiếm, thêm vào giỏ hàng, đặt hàng
-- **Trang quản trị**: Quản lý sản phẩm, danh mục, đơn hàng, khách hàng, doanh thu
+- **Customer Pages**: Browse products, search, add to cart, place orders
+- **Admin Panel**: Manage products, categories, orders, customers, and revenue
 
-## 🗂️ Cấu trúc dự án
+## 🗂️ Project Structure
 
 ```
-├── Pages/              # Các trang dành cho người dùng
-│   ├── index.php           # Trang chủ
-│   ├── Shop.php            # Trang cửa hàng (danh sách sản phẩm)
-│   ├── productDetail.php   # Chi tiết sản phẩm
-│   ├── cart.php            # Giỏ hàng
-│   ├── Checkout.php        # Thanh toán
-│   ├── confirm_payment.php # Xác nhận thanh toán
-│   ├── order_success.php   # Đặt hàng thành công
-│   ├── order_list.php      # Danh sách đơn hàng
-│   ├── login.php           # Đăng nhập
-│   ├── register.php        # Đăng ký
-│   ├── account.php         # Quản lý tài khoản
-│   ├── search.php          # Tìm kiếm sản phẩm
-│   └── sale_products.php   # Sản phẩm khuyến mãi
+├── Pages/              # Customer-facing pages
+│   ├── index.php           # Homepage
+│   ├── Shop.php            # Shop page (product listing)
+│   ├── productDetail.php   # Product details
+│   ├── cart.php            # Shopping cart
+│   ├── Checkout.php        # Checkout
+│   ├── confirm_payment.php # Payment confirmation
+│   ├── order_success.php   # Order success page
+│   ├── order_list.php      # Order history
+│   ├── login.php           # Login
+│   ├── register.php        # Registration
+│   ├── account.php         # Account management
+│   ├── search.php          # Product search
+│   └── sale_products.php   # Sale products
 │
-├── admin/              # Trang quản trị
-│   ├── admin_index.php         # Trang chủ admin
-│   ├── admin_products.php      # Quản lý sản phẩm
-│   ├── ad_categories.php       # Quản lý danh mục
-│   ├── admin_order_manage.php  # Quản lý đơn hàng
-│   ├── admin_accounts.php      # Quản lý tài khoản
-│   ├── admin_revenue.php       # Thống kê doanh thu
-│   ├── admin_promotions.php    # Quản lý khuyến mãi
-│   ├── admin_reviews.php       # Quản lý đánh giá
-│   ├── admin_best_sellers.php  # Sản phẩm bán chạy
-│   └── admin_Shipping.php      # Quản lý vận chuyển
+├── admin/              # Admin panel
+│   ├── admin_index.php         # Admin dashboard
+│   ├── admin_products.php      # Product management
+│   ├── ad_categories.php       # Category management
+│   ├── admin_order_manage.php  # Order management
+│   ├── admin_accounts.php      # Account management
+│   ├── admin_revenue.php       # Revenue statistics
+│   ├── admin_promotions.php    # Promotion management
+│   ├── admin_reviews.php       # Review management
+│   ├── admin_best_sellers.php  # Best-selling products
+│   └── admin_Shipping.php      # Shipping management
 │
-├── config/             # Cấu hình
-│   └── db.php              # Kết nối cơ sở dữ liệu MySQL
+├── config/             # Configuration
+│   └── db.php              # MySQL database connection
 │
-├── includes/           # Thành phần dùng chung
-│   ├── header.php          # Header trang người dùng
+├── includes/           # Shared components
+│   ├── header.php          # Customer page header
 │   ├── footer.php          # Footer
-│   ├── admin_header.php    # Header trang admin
-│   ├── admin_functions.php # Các hàm xử lý admin
-│   └── adminShipping.php   # Hàm xử lý vận chuyển
+│   ├── admin_header.php    # Admin page header
+│   ├── admin_functions.php # Admin utility functions
+│   └── adminShipping.php   # Shipping functions
 │
-├── process/            # Xử lý logic (backend)
-│   ├── login_process.php       # Xử lý đăng nhập
-│   ├── register_process.php    # Xử lý đăng ký
-│   ├── add_to_cart.php         # Thêm vào giỏ hàng
-│   ├── update_cart.php         # Cập nhật giỏ hàng
-│   ├── remove_from_cart.php    # Xóa khỏi giỏ hàng
-│   ├── process_order.php       # Xử lý đơn hàng
-│   ├── process_payment.php     # Xử lý thanh toán
-│   ├── process_product.php     # Xử lý sản phẩm
-│   ├── process_category.php    # Xử lý danh mục
-│   ├── process_promotion.php   # Xử lý khuyến mãi
-│   ├── process_account.php     # Xử lý tài khoản
-│   ├── process_revenue.php     # Xử lý doanh thu
-│   ├── search_ajax.php         # Tìm kiếm AJAX
-│   ├── submit_review.php       # Gửi đánh giá
-│   └── submit_response.php     # Phản hồi đánh giá
+├── process/            # Backend logic
+│   ├── login_process.php       # Login handler
+│   ├── register_process.php    # Registration handler
+│   ├── add_to_cart.php         # Add to cart handler
+│   ├── update_cart.php         # Update cart handler
+│   ├── remove_from_cart.php    # Remove from cart handler
+│   ├── process_order.php       # Order handler
+│   ├── process_payment.php     # Payment handler
+│   ├── process_product.php     # Product handler
+│   ├── process_category.php    # Category handler
+│   ├── process_promotion.php   # Promotion handler
+│   ├── process_account.php     # Account handler
+│   ├── process_revenue.php     # Revenue handler
+│   ├── search_ajax.php         # AJAX search
+│   ├── submit_review.php       # Submit review
+│   └── submit_response.php     # Review response
 │
 ├── css/                # Stylesheets
-│   ├── style.css           # CSS trang người dùng
-│   └── admin_style.css     # CSS trang admin
+│   ├── style.css           # Customer page CSS
+│   └── admin_style.css     # Admin page CSS
 │
 ├── js/                 # JavaScript
-│   └── script.js           # Scripts chính
+│   └── script.js           # Main scripts
 │
-├── images/             # Hình ảnh
-├── uploads/            # Thư mục upload
-└── data/               # Dữ liệu
-    └── vietnamAddress.json # Danh sách địa chỉ Việt Nam
+├── images/             # Images
+├── uploads/            # Upload directory
+└── data/               # Data
+    └── vietnamAddress.json # Vietnam address list
 ```
 
-## 🚀 Tính năng
+## 🚀 Features
 
-### Dành cho Khách hàng
-- ✅ Đăng ký / Đăng nhập tài khoản
-- ✅ Xem danh mục sản phẩm
-- ✅ Xem chi tiết sản phẩm
-- ✅ Tìm kiếm sản phẩm (hỗ trợ AJAX)
-- ✅ Thêm sản phẩm vào giỏ hàng
-- ✅ Chọn size sản phẩm (S, M, L, XL, XXL)
-- ✅ Cập nhật số lượng trong giỏ hàng
-- ✅ Thanh toán đơn hàng
-- ✅ Nhập mã giảm giá
-- ✅ Chọn địa chỉ giao hàng (Tỉnh/Huyện/Xã)
-- ✅ Xem lịch sử đơn hàng
-- ✅ Đánh giá sản phẩm
+### For Customers
+- ✅ Account registration / login
+- ✅ Browse product categories
+- ✅ View product details
+- ✅ Search products (AJAX-powered)
+- ✅ Add products to cart
+- ✅ Select product sizes (S, M, L, XL, XXL)
+- ✅ Update cart quantities
+- ✅ Checkout orders
+- ✅ Apply discount codes
+- ✅ Select shipping address (Province/District/Ward)
+- ✅ View order history
+- ✅ Product reviews
 
-### Dành cho Admin
-- ✅ Quản lý sản phẩm (CRUD)
-- ✅ Quản lý danh mục sản phẩm
-- ✅ Quản lý đơn hàng (Xác nhận/Hủy)
-- ✅ Quản lý thanh toán
-- ✅ Quản lý tài khoản khách hàng
-- ✅ Thống kê doanh thu
-- ✅ Quản lý khuyến mãi
-- ✅ Quản lý đánh giá sản phẩm
-- ✅ Xem sản phẩm bán chạy
+### For Admin
+- ✅ Product management (CRUD)
+- ✅ Category management
+- ✅ Order management (Confirm/Cancel)
+- ✅ Payment management
+- ✅ Customer account management
+- ✅ Revenue statistics
+- ✅ Promotion management
+- ✅ Product review management
+- ✅ View best-selling products
 
-## 💻 Yêu cầu hệ thống
+## 💻 System Requirements
 
 - PHP >= 7.4
 - MySQL >= 5.7
 - Web Server (Apache/Nginx)
-- XAMPP / WAMP / LAMP (khuyến nghị)
+- XAMPP / WAMP / LAMP (recommended)
 
-## ⚙️ Cài đặt
+## ⚙️ Installation
 
-### Bước 1: Clone repository
+### Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/giapthinh123/php.git
 cd php
 ```
 
-### Bước 2: Cấu hình cơ sở dữ liệu
+### Step 2: Configure the database
 
-1. Tạo database mới trong MySQL với tên: `webquanaonam`
-2. Import file SQL (nếu có) hoặc tạo các bảng cần thiết
-3. Cập nhật thông tin kết nối trong `config/db.php`:
+1. Create a new database in MySQL named: `webquanaonam`
+2. Import the SQL file (if available) or create the necessary tables
+3. Update the connection information in `config/db.php`:
 
 ```php
 $servername = "localhost";
@@ -135,43 +135,43 @@ $password = "";
 $dbname = "webquanaonam";
 ```
 
-### Bước 3: Chạy ứng dụng
+### Step 3: Run the application
 
-1. Copy toàn bộ project vào thư mục `htdocs` (XAMPP) hoặc `www` (WAMP)
-2. Khởi động Apache và MySQL
-3. Truy cập: `http://localhost/php/Pages/index.php`
+1. Copy the entire project to the `htdocs` folder (XAMPP) or `www` folder (WAMP)
+2. Start Apache and MySQL
+3. Access: `http://localhost/php/Pages/index.php`
 
-## 📊 Cấu trúc Database (Gợi ý)
+## 📊 Database Structure (Suggested)
 
-Các bảng chính:
-- `users` - Thông tin người dùng
-- `products` - Sản phẩm
-- `product_images` - Ảnh chi tiết sản phẩm
-- `categories` - Danh mục sản phẩm
-- `cart` - Giỏ hàng
-- `orders` - Đơn hàng
-- `order_details` - Chi tiết đơn hàng
-- `payments` - Thanh toán
-- `reviews` - Đánh giá
-- `promotions` - Khuyến mãi
+Main tables:
+- `users` - User information
+- `products` - Products
+- `product_images` - Product detail images
+- `categories` - Product categories
+- `cart` - Shopping cart
+- `orders` - Orders
+- `order_details` - Order details
+- `payments` - Payments
+- `reviews` - Reviews
+- `promotions` - Promotions
 
 ## 🌐 Demo
 
-### Trang người dùng
-- Trang chủ: `/Pages/index.php`
-- Cửa hàng: `/Pages/Shop.php`
+### Customer Pages
+- Homepage: `/Pages/index.php`
+- Shop: `/Pages/Shop.php`
 
-### Trang quản trị
+### Admin Panel
 - Dashboard: `/admin/admin_index.php`
 
-## 📞 Liên hệ
+## 📞 Contact
 
 - **Hotline:** 0985 032 589
 - **Email:** info@goldievietnam.com
 
 ## 📄 License
 
-Dự án này được phát triển cho mục đích học tập.
+This project was developed for educational purposes.
 
 ---
 
